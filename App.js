@@ -1,15 +1,21 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
+import Content from "./Content";
+
 export default class App extends React.Component {
+  async componentWillMount() {
+    await Expo.Font.loadAsync({
+      Roboto: require("native-base/Fonts/Roboto.ttf"),
+      Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf")
+    });
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.header}>Hello World!</Text>
-        <Text style={styles.text}>Code: React Native</Text>
-        <Text style={styles.text}>
-          Shake your phone to open the developer menu.
-        </Text>
+        <Text style={styles.header}>Impact Todo</Text>
+        <Content />
       </View>
     );
   }
