@@ -1,4 +1,4 @@
-# Impact Todo Web React Native
+# Impact Todo Mobile React Native
 
 Impact Todo mobile application frontend with React, React Native, & Redux. Also access the backend API.
 
