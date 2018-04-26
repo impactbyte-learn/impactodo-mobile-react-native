@@ -16,10 +16,21 @@ Edit the `.env` file based on your API URL:
 REACT_APP_API_URL=http://localhost:3000
 ```
 
-Then start the development server:
+Then start the development server via Expo:
 
 ```sh
-yarn dev
+# Starts the development server so you can open your app in the Expo app on your phone.
+yarn start
+```
+
+Platform specific:
+
+```sh
+# Starts the development server and loads your app on a connected Android device or emulator. Requires Android build tools.
+yarn run android
+
+# Starts the development server and loads your app in an iOS simulator. Mac only, requires Xcode.
+yarn run ios
 ```
 
 ## Build
