@@ -1,4 +1,5 @@
 import {
+  Badge,
   Body,
   Button,
   Container,
@@ -39,12 +40,22 @@ const styles = StyleSheet.create({
   footerButton: {
     backgroundColor: "#111111"
   },
+  welcome: {
+    padding: 10
+  },
   close: {
     fontSize: 30,
     color: "#800000",
     paddingRight: 10
   }
 });
+
+const todos = [
+  "Create a web app",
+  "Build a mobile app",
+  "Enjoy life",
+  "Adventure on!"
+];
 
 export default class AppContent extends React.Component {
   constructor(props) {
@@ -91,30 +102,42 @@ export default class AppContent extends React.Component {
             </Item>
           </Form>
 
-          <Button full success>
+          <Button block success>
             <Text>Submit Todo</Text>
           </Button>
 
           <List>
-            <ListItem>
-              <Icon name="close" style={styles.close} />
-              <Text>Create a web app</Text>
-            </ListItem>
-            <ListItem>
-              <Icon name="close" style={styles.close} />
-              <Text>Build a mobile app</Text>
-            </ListItem>
-            <ListItem>
-              <Icon name="close" style={styles.close} />
-              <Text>Enjoy life...</Text>
-            </ListItem>
+            {todos.map((todo, index) => {
+              return (
+                <ListItem key={index}>
+                  <Icon name="close" style={styles.close} />
+                  <Text>{todo}</Text>
+                </ListItem>
+              );
+            })}
           </List>
         </Content>
 
-        <Footer style={styles.footer}>
+        <Footer>
           <FooterTab>
-            <Button full style={styles.footerButton}>
-              <Text>&copy; Impact Byte</Text>
+            <Button vertical>
+              <Icon name="apps" />
+              <Text>Home</Text>
+            </Button>
+            <Button vertical badge active>
+              <Badge>
+                <Text>3</Text>
+              </Badge>
+              <Icon type="Foundation" name="clipboard-pencil" />
+              <Text>Todo</Text>
+            </Button>
+            <Button vertical>
+              <Icon active name="navigate" />
+              <Text>Settings</Text>
+            </Button>
+            <Button vertical>
+              <Icon name="person" />
+              <Text>About</Text>
             </Button>
           </FooterTab>
         </Footer>
