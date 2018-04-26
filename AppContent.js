@@ -1,18 +1,22 @@
 import {
+  Body,
+  Button,
   Container,
-  Header,
-  Title,
-  text,
-  ListItem,
   Content,
   Footer,
   FooterTab,
-  Button,
-  Left,
-  Right,
-  Body,
+  Form,
+  H1,
+  Header,
   Icon,
-  Text
+  Input,
+  Item,
+  Left,
+  List,
+  ListItem,
+  Right,
+  Text,
+  Title
 } from "native-base";
 
 import Expo from "expo";
@@ -31,6 +35,14 @@ const styles = StyleSheet.create({
   },
   footer: {
     backgroundColor: "#800000"
+  },
+  footerButton: {
+    backgroundColor: "#111111"
+  },
+  close: {
+    fontSize: 30,
+    color: "#800000",
+    paddingRight: 10
   }
 });
 
@@ -71,19 +83,38 @@ export default class AppContent extends React.Component {
         </Header>
 
         <Content>
-          <Text>Hello, user!</Text>
+          <H1>Hello, user!</H1>
 
-          <Button>
-            <Text>Submit</Text>
+          <Form>
+            <Item>
+              <Input placeholder="What's on your mind?" />
+            </Item>
+          </Form>
+
+          <Button full success>
+            <Text>Submit Todo</Text>
           </Button>
 
-          <ListItem />
+          <List>
+            <ListItem>
+              <Icon name="close" style={styles.close} />
+              <Text>Create a web app</Text>
+            </ListItem>
+            <ListItem>
+              <Icon name="close" style={styles.close} />
+              <Text>Build a mobile app</Text>
+            </ListItem>
+            <ListItem>
+              <Icon name="close" style={styles.close} />
+              <Text>Enjoy life...</Text>
+            </ListItem>
+          </List>
         </Content>
 
         <Footer style={styles.footer}>
           <FooterTab>
-            <Button full>
-              <Text>Footer</Text>
+            <Button full style={styles.footerButton}>
+              <Text>&copy; Impact Byte</Text>
             </Button>
           </FooterTab>
         </Footer>
