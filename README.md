@@ -2,6 +2,8 @@
 
 Impact Todo mobile application frontend with React, React Native, & Redux. Also access the backend API.
 
+![Screenshot](./assets/screenshot.png)
+
 ## Development
 
 Install dependencies:
