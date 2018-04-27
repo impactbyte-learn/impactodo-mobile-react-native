@@ -1,8 +1,9 @@
 {
-  "name": "code-react-native",
+  "name": "impactodo-mobile-react-native",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "eslint-plugin-flowtype": "^2.46.3",
     "jest-expo": "26.0.0",
     "react-native-scripts": "1.13.2",
     "react-test-renderer": "16.3.0-alpha.1"
